@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taman Mini Pintu 3</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(#87CEEB,#b8f5b8);
+font-family:Arial;
+overflow:hidden;
+}
+
+.scene{
+width:360px;
+height:440px;
+background:linear-gradient(#87CEEB 60%,#7ed957 60%);
+border-radius:20px;
+position:relative;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.sign{
+position:absolute;
+top:10px;
+left:50%;
+transform:translateX(-50%);
+background:white;
+padding:6px 14px;
+border-radius:10px;
+font-weight:bold;
+}
+
+.text{
+position:absolute;
+top:60px;
+width:100%;
+padding:0 25px;
+box-sizing:border-box;
+text-align:center;
+font-size:15px;
+font-weight:bold;
+line-height:1.6;
+}
+
+.tree{position:absolute;bottom:90px;font-size:40px;}
+.tree1{left:20px}
+.tree2{left:80px}
+.tree3{left:140px}
+.tree4{left:200px}
+.tree5{left:260px}
+
+.cloud{
+position:absolute;
+top:40px;
+font-size:28px;
+animation:cloudMove 20s linear infinite;
+}
+
+.cloud2{
+top:70px;
+animation-duration:26s;
+}
+
+@keyframes cloudMove{
+0%{left:-60px}
+100%{left:400px}
+}
+
+.bird{
+position:absolute;
+top:100px;
+font-size:22px;
+animation:birdMove 15s linear infinite;
+}
+
+@keyframes birdMove{
+0%{left:-40px}
+100%{left:380px}
+}
+
+.halte{
+position:absolute;
+right:10px;
+bottom:90px;
+font-size:35px;
+}
+
+.road{
+position:absolute;
+bottom:0;
+width:100%;
+height:60px;
+background:#555;
+}
+
+.boy,.girl{
+position:absolute;
+bottom:60px;
+font-size:45px;
+transition:1s;
+}
+
+.boy{left:20px}
+.girl{right:40px}
+
+button{
+position:absolute;
+bottom:12px;
+left:50%;
+transform:translateX(-50%);
+padding:10px 18px;
+border:none;
+border-radius:10px;
+background:#ff6b81;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+<div class="sign">Taman Mini Pintu 3</div>
+
+<div class="text" id="story">
+sore hari di taman mini pintu 3...
+</div>
+
+<div class="cloud">☁️</div>
+<div class="cloud cloud2">☁️</div>
+
+<div class="bird">🐦</div>
+
+<div class="tree tree1">🌳</div>
+<div class="tree tree2">🌳</div>
+<div class="tree tree3">🌳</div>
+<div class="tree tree4">🌳</div>
+<div class="tree tree5">🌳</div>
+
+<div class="halte">🚏</div>
+
+<div class="boy" id="boy">👦</div>
+<div class="girl" id="girl">👧</div>
+
+<div class="road"></div>
+
+<button onclick="next()">lanjut</button>
+
+</div>
+
+<script>
+
+let step=0;
+
+function next(){
+
+step++;
+
+const boy=document.getElementById("boy");
+const girl=document.getElementById("girl");
+const text=document.getElementById("story");
+
+if(step==1){
+text.innerHTML="ceweknya baru pulang kerja... hari ini cukup melelahkan.";
+}
+
+else if(step==2){
+text.innerHTML="di sisi lain, cowonya juga baru selesai kuliah.";
+boy.style.left="80px";
+}
+
+else if(step==3){
+text.innerHTML="mereka bertemu di halte kecil di taman mini.";
+boy.style.left="120px";
+}
+
+else if(step==4){
+text.innerHTML="burung-burung lewat di langit sore yang tenang.";
+boy.style.left="160px";
+}
+
+else if(step==5){
+text.innerHTML="mereka sama-sama lelah dengan dunia hari ini.";
+boy.style.left="200px";
+}
+
+else if(step==6){
+girl.innerHTML="☺️";
+text.innerHTML="tapi entah kenapa... melihat kamu membuat semuanya terasa lebih ringan.";
+}
+
+else if(step==7){
+boy.innerHTML="😊";
+girl.innerHTML="😊";
+text.innerHTML="mungkin karena tempat pulang paling nyaman... ternyata adalah kamu.";
+}
+
+}
+
+</script>
+
+</body>
+</html>
